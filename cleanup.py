@@ -18,7 +18,7 @@ MIN_FREE = int(os.environ['MIN_FREE'])
 class Torrent:
     id: str
     name: str
-    files: List[str] = []
+    files: List[str]
 
 
 def exec(*args: str):
@@ -40,6 +40,7 @@ def transmission_list():
         t = Torrent(
             id=fields[0],
             name=fields[9],
+            files=[]
         )
         files = exec('transmission', f'-t{t.id}', '--files').splitlines()
         t.files=[ f for n, f in enumerate(files) if n <= len(files) - 3 ]
