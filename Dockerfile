@@ -1,4 +1,4 @@
-FROM debian:11.0-slim
+FROM python:3.9.7-slim
 
 ENV MIN_FREE=53687091200 \
     DELETE_TIME=02:00 \
@@ -8,7 +8,7 @@ ENV MIN_FREE=53687091200 \
 RUN apt-get update && apt-get install -y \
     transmission-cli
 
-COPY cleanup.sh /
+COPY cleanup.py /
 COPY entrypoint.sh /
 
 ENTRYPOINT [ "/entrypoint.sh" ]
