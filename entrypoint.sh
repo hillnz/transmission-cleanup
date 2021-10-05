@@ -3,7 +3,7 @@
 set -e
 
 while true; do
-    /cleanup.sh
+    /cleanup.py
 
     echo "Sleeping until tomorrow at ${DELETE_TIME}"
     sleep $(( $(date -d "tomorrow ${DELETE_TIME}" +%s) - $(date +%s) ))
