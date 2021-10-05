@@ -1,8 +1,6 @@
 # transmission-cleanup
 
-A script to delete transmission files when free space falls below a threshold.
-
-Connects to transmission to finds the oldest completed torrent, and then remove all its files (and any duplicate files).
+Deletes files from a directory to meet a disk free space threshold, oldest first. Connects to transmission to delete the associated downloaded torrent if it exists.
 
 ## Environment Variables
 
