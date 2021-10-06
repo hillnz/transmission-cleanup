@@ -70,7 +70,8 @@ while True:
     oldest_file = ''
     dirs = [CLEANUP_DIR]
 
-    while dir := dirs.pop():
+    while len(dirs) > 0:
+        dir = dirs.pop()
         
         empty = True
         for f in os.scandir(dir):
