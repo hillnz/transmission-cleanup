@@ -98,6 +98,7 @@ while True:
             transmission(f'-t{t.id}', '--remove-and-delete')
         else:
             print(f'Deleting file "{oldest_file}"')
+            os.remove(oldest_file)
 
     else:
         print('The directory is already empty')
