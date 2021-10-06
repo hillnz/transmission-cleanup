@@ -1,4 +1,4 @@
-FROM python:3.9.7-slim
+FROM python:3.10.0-slim
 
 ENV MIN_FREE=53687091200 \
     DELETE_TIME=02:00 \
