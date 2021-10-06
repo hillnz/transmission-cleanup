@@ -31,7 +31,7 @@ def transmission(*args: str):
 
 
 def transmission_list():
-    output = exec('transmission', '-l')
+    output = transmission('-l')
     lines = output.splitlines()
     for n, line in enumerate(lines):
         if n == 0 or n >= len(lines) - 2:
@@ -42,7 +42,7 @@ def transmission_list():
             name=fields[9],
             files=[]
         )
-        files = exec('transmission', f'-t{t.id}', '--files').splitlines()
+        files = transmission(f'-t{t.id}', '--files').splitlines()
         t.files=[ f for n, f in enumerate(files) if n <= len(files) - 3 ]
         yield t
 
@@ -54,12 +54,10 @@ def torrent_for_file(torrent_list: List[Torrent], file_path: str):
                 return t
 
 
-x = exec
-
 while True:
     sleep(1)
 
-    free_space = int(x('findmnt', '-f', '-o', 'AVAIL', '-b', '-n', '-T', CLEANUP_DIR))
+    free_space = int(exec('findmnt', '-f', '-o', 'AVAIL', '-b', '-n', '-T', CLEANUP_DIR))
     if free_space >= MIN_FREE:
         print(f"Free space is {free_space}, no further cleanup required")
         break
