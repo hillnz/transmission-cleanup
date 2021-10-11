@@ -86,7 +86,7 @@ while True:
                 oldest_mtime = modified
                 oldest_file = f.path
 
-        if empty:
+        if empty and dir != CLEANUP_DIR:
             print(f'Removing empty dir {dir}')
             os.removedirs(dir)
 
