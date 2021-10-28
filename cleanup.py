@@ -102,3 +102,4 @@ while True:
 
     else:
         print('The directory is already empty')
+        break
