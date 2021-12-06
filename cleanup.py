@@ -19,11 +19,11 @@ def exec(*args: str):
     return result.stdout.decode()
 
         
-def torrent_for_file(transmission_client: Client, file_path: str):
+def torrent_for_file(transmission_client: Client, base_dir: str, file_path: str):
     torrent_list = transmission_client.get_torrents()
     for t in torrent_list:
         for f in t.files():
-            if f.name == file_path:
+            if os.path.join(base_dir, f.name) == file_path:
                 return t
 
 
@@ -66,7 +66,7 @@ def main():
 
         if oldest_file:
                  
-            t = torrent_for_file(transmission, oldest_file)
+            t = torrent_for_file(transmission, CLEANUP_DIR, oldest_file)
             if t:
                 print(f'Deleting torrent "{t.name}" and its files')
                 transmission.remove_torrent(t.id, delete_data=True)
