@@ -1,4 +1,4 @@
-FROM python:3.9.9 AS reqs
+FROM python:3.10.2 AS reqs
 
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
@@ -6,7 +6,7 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 RUN /root/.poetry/bin/poetry export -o requirements.txt
 
-FROM python:3.9.9-slim
+FROM python:3.10.2-slim
 
 ENV MIN_FREE=53687091200 \
     DELETE_TIME=02:00 \
