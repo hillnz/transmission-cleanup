@@ -5,6 +5,6 @@ set -e
 while true; do
     /cleanup.py
 
-    echo "Sleeping for half an hour..."
-    sleep 30m
+    echo "Sleeping for $DELETE_FREQ..."
+    sleep "$DELETE_FREQ"
 done
