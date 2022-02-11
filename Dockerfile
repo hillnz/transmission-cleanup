@@ -9,7 +9,7 @@ RUN /root/.poetry/bin/poetry export -o requirements.txt
 FROM python:3.10.2-slim
 
 ENV MIN_FREE=53687091200 \
-    DELETE_TIME=02:00 \
+    DELETE_FREQ=30m \
     CLEANUP_DIR=/cleanup \
     TRANSMISSION_HOST=
 
