@@ -5,6 +5,6 @@ set -e
 while true; do
     /cleanup.py
 
-    echo "Sleeping until tomorrow at ${DELETE_TIME}"
-    sleep $(( $(date -d "tomorrow ${DELETE_TIME}" +%s) - $(date +%s) ))
+    echo "Sleeping for half an hour..."
+    sleep 30m
 done
