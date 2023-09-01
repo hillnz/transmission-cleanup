@@ -6,7 +6,7 @@ authors = ["Jono Hill <jono@hillnz.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-transmission-rpc = "^3.3.0"
+transmission-rpc = "^6.0.0"
 
 [tool.poetry.dev-dependencies]
 

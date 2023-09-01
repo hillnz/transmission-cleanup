@@ -15,7 +15,7 @@ optional = false
 python-versions = ">=3.5.0"
 
 [package.extras]
-unicode_backport = ["unicodedata2"]
+unicode-backport = ["unicodedata2"]
 
 [[package]]
 name = "idna"
@@ -41,22 +41,19 @@ urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
-use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
 name = "transmission-rpc"
-version = "3.3.0"
-description = "Python module that implements the Transmission bittorent client RPC protocol"
+version = "6.0.0"
+description = "Python module that implements the Transmission bittorent client JSON-RPC protocol"
 category = "main"
 optional = false
-python-versions = ">=3.6.1,<4.0.0"
+python-versions = ">=3.8,<4.0"
 
 [package.dependencies]
 requests = ">=2.23.0,<3.0.0"
-typing_extensions = ">=3.7.4.2,<4.0.0.0"
-
-[package.extras]
-docs = ["sphinx (==4.2.0)", "sphinx-rtd-theme (==1.0.0)"]
+typing-extensions = "*"
 
 [[package]]
 name = "typing-extensions"
@@ -76,13 +73,13 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 
 [package.extras]
 brotli = ["brotlipy (>=0.6.0)"]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "278fa73e067e818dec20e91017d8f89a8d9a4b906d09f77528e01d7cc4683ede"
+content-hash = "0376f82453d33ae4e8cdd5780f2e68d3eae60713485c90e13cd5f4ac2cbac967"
 
 [metadata.files]
 certifi = [
@@ -102,8 +99,8 @@ requests = [
     {file = "requests-2.26.0.tar.gz", hash = "sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"},
 ]
 transmission-rpc = [
-    {file = "transmission-rpc-3.3.0.tar.gz", hash = "sha256:ef3a931fc1f1db74edf8660e475b9295e0904ee922030ef0e45b0c73f4be65ae"},
-    {file = "transmission_rpc-3.3.0-py3-none-any.whl", hash = "sha256:be01516551683a301e77a3a60e7bb2085fbfa824cc4ceb6a35e5074ec6926ef9"},
+    {file = "transmission_rpc-6.0.0-py3-none-any.whl", hash = "sha256:61ba831e1fdd5106f92b75d89f8453e42832681bebf03abefb5256e637dffb77"},
+    {file = "transmission_rpc-6.0.0.tar.gz", hash = "sha256:332e97ddec572c8fa448bddb26e62f7fc37969a09a70039a86e1f6514f089565"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.10.0.2-py2-none-any.whl", hash = "sha256:d8226d10bc02a29bcc81df19a26e56a9647f8b0a6d4a83924139f4a8b01f17b7"},
